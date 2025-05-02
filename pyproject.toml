@@ -13,3 +13,27 @@ Repository = "https://github.com/kijai/ComfyUI-DepthAnythingV2"
 PublisherId = "kijai"
 DisplayName = "ComfyUI-DepthAnythingV2"
 Icon = ""
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = [ 
+    "ComfyUI_DepthAnythingV2_nodes", 
+    "ComfyUI_DepthAnythingV2_nodes.depth_anything_v2", 
+    "ComfyUI_DepthAnythingV2_nodes.depth_anything_v2.dinov2_layers",
+    "ComfyUI_DepthAnythingV2_nodes.depth_anything_v2.util",
+]
+
+[tool.setuptools.package-dir]
+"ComfyUI_DepthAnythingV2_nodes" = "."
+"ComfyUI_DepthAnythingV2_nodes.depth_anything_v2" = "depth_anything_v2"
+"ComfyUI_DepthAnythingV2_nodes.depth_anything_v2.dinov2_layers" = "depth_anything_v2/dinov2_layers"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+
+[project.entry-points."comfyui.custom_nodes"]
+ComfyUI_DepthAnythingV2_nodes = "ComfyUI_DepthAnythingV2_nodes"

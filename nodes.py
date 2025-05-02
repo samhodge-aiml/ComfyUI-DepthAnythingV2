@@ -7,7 +7,7 @@ from contextlib import nullcontext
 
 import comfy.model_management as mm
 from comfy.utils import ProgressBar, load_torch_file
-import folder_paths
+from comfy.cmd import folder_paths as folder_paths
 
 from .depth_anything_v2.dpt import DepthAnythingV2
 
